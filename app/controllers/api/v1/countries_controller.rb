@@ -13,6 +13,7 @@ class Api::V1::CountriesController < ApplicationController
 
   def create
     @country = Country.new(country_params)
+
     if @country.save
       render json: @country, status: :created
     else
@@ -33,14 +34,11 @@ class Api::V1::CountriesController < ApplicationController
   end
 
   private
+    def country_params
+      params.permit(:id)
+    end
 
-
-      def country_params
-        params.permit(:id)
-      end
-
-      def set_country
-        @country ||= Country.find(params[:id])
-      end
-
+    def set_country
+      @country ||= Country.find(params[:id])
+    end
   end
