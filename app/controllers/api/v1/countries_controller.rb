@@ -7,15 +7,9 @@ class Api::V1::CountriesController < ApplicationController
   end
 
   def show
-    @country = Country.find(params[:id]);
+    @country = Country.find(params[:id])
     render json: @country
   end
-
-  # def show_two
-  #   @country_1 = Country.find(params[:id_1])
-  #   @country_2 = Country.find(params[:id_2])
-  #   render json: @country_1, @country_2
-  # end
 
   def create
     @country = Country.new(country_params)
@@ -35,7 +29,7 @@ class Api::V1::CountriesController < ApplicationController
   end
 
   def destroy
-    @post.destroy
+    @country.destroy
   end
 
   private
