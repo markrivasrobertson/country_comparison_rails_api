@@ -2,7 +2,8 @@ class CreateCountry < ActiveRecord::Migration[5.0]
   def change
     create_table :countries do |t|
       t.string :name
-      t.integeradult_hiv :ag_pct
+      t.integer :ag_pct
+      t.integer :adult_hiv 
       t.integer :age_marriage
       t.integer :empl_rate
       t.integer :unempl_rate
