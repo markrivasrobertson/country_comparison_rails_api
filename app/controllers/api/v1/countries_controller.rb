@@ -7,7 +7,6 @@ class Api::V1::CountriesController < ApplicationController
   # end
 
   def show
-    @country = Country.find(params[:id]);
     render json: @country
   end
 
